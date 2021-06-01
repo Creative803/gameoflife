@@ -86,10 +86,10 @@
         alert("Sorry ya can't buy a pet, you need 3,500coins to buy a pet")
       }
       if (wallet>3500 && pet=="none")  {
+        wallet = parseInt(wallet)-parseInt(3500);
+        net = parseInt(wallet)+parseInt(bank);
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
-        wallet = parseInt(wallet-3500);
-        net = parseInt(wallet)+parseInt(bank);
       }
       else  {
         alert("You can't buy more pets.")
