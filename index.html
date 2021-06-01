@@ -10,6 +10,7 @@
       <option value="mj">My Job</option>
       <option value="work">Work</option>
       <option value="buyp">Buy pet</option>
+      <option value="money">My money</option>
     </select>
     <button onclick="d()">GO!</button>
   </div>
@@ -28,12 +29,15 @@
   document.getElementById("petlisti").style.display="none";
   document.getElementById("m").style.display=null;
   var wallet = "0";
+  var bank = "0";
+  var net = "0";
   var user = "";
   var job = "none";
   var random = ['doctor','youtuber','scientist'];
   var randomjob = random[Math.floor(Math.random()*random.length)];
   var pet = "none";
   var petface = "";
+  var my = "YOUR BALANCE  \nWallet: "+wallet+"\n Bank: "+bank+"\nNet: "+net;
   
   user = prompt("Please enter username");
   if (user=="")  {
@@ -72,6 +76,7 @@
       else  {
         alert("You don't have a job so you can't work.")
       }
+      my = "YOUR BALANCE  \nWallet: "+wallet+"\n Bank: "+bank+"\nNet: "+net;
     }
     if (an=="buyp")  {
       if (wallet<3500)  {
@@ -81,6 +86,9 @@
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
       }
+    }
+    if (an=="money")  {
+      alert(my)
     }
   }
   function buypet()  {
