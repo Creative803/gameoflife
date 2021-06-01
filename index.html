@@ -106,7 +106,7 @@
     }
   }
   function buypet()  {
-    var pet = document.getElementById("petlist").value;
+    pet = document.getElementById("petlist").value;
     if (pet=="dog")  {
       petface = "🐶";
     }
@@ -123,11 +123,11 @@
       petface = "🐭";
     }
     alert("Congratulations @"+user+" ! You bought a pet "+pet+petface)
-    wallet = parseInt(wallet-3500);
+    wallet = parseInt(wallet)-parseInt(3500);
     net = parseInt(wallet)+parseInt(bank);
     document.getElementById("petlisti").style.display="none";
     document.getElementById("m").style.display=null;
-    }
+  }
 </script>
 <style>
   #h  {
