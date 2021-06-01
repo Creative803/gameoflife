@@ -8,11 +8,13 @@
     <select id="os">
       <option value="getj">Get job</option>
       <option value="mj">My Job</option>
+      <option value="work">Work</option>
     </select>
     <button onclick="d()">GO!</button>
   </div>
 </body>
 <script>
+  var wallet = "0";
   var user = "";
   var job = "none";
   var random = ['doctor','youtuber','scientist'];
@@ -32,6 +34,16 @@
       }
       else  {
         alert("You don't have a job")
+      }
+    }
+    if (an=="work")  {
+      randomval = Math.floor(Math.random()*1500)
+      if (job!="none")  {
+        wallet = parseInt(wallet)+parseInt(randomval);
+        alert("You earned "+randomval+"coins, current wallet value="+wallet)
+      }
+      else  {
+        alert("You don't have a job so you can't work.")
       }
     }
   }
