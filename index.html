@@ -88,8 +88,8 @@
       if (wallet>3500 && pet=="none")  {
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
+        wallet = parseInt(wallet-3500);
         net = parseInt(wallet)+parseInt(bank);
-        pet = document.getElementById("petlist").value;
       }
       else  {
         alert("You can't buy more pets.")
