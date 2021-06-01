@@ -11,6 +11,7 @@
       <option value="work">Work</option>
       <option value="buyp">Buy pet</option>
       <option value="money">My money</option>
+      <option value="myp">My pet</option>
     </select>
     <button onclick="d()">GO!</button>
   </div>
@@ -84,7 +85,7 @@
       if (wallet<3500)  {
         alert("Sorry ya can't buy a pet, you need 3,500coins to buy a pet")
       }
-      if (wallet>3500)  {
+      if (wallet>3500 && pet=="none")  {
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
         net = parseInt(wallet)+parseInt(bank);
@@ -95,6 +96,9 @@
     }
     if (fovr=="f")  {
       net = parseInt(wallet)+parseInt(bank);
+    }
+    if (an=="myp")  {
+      alert("You have a pet "+pet+petface)
     }
   }
   function buypet()  {
@@ -115,7 +119,8 @@
               petface = "🐭";
             }
           alert("Congratulations @"+user+" ! You bought a pet "+pet+petface)
-          wallet = parseInt(wallet-3500)
+          wallet = parseInt(wallet-3500);
+          net = parseInt(wallet)+parseInt(bank);
     document.getElementById("petlisti").style.display="none";
     document.getElementById("m").style.display=null;
     }
