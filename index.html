@@ -9,18 +9,45 @@
       <option value="getj">Get job</option>
       <option value="mj">My Job</option>
       <option value="work">Work</option>
+      <option value="buyp">Buy pet</option>
     </select>
     <button onclick="d()">GO!</button>
   </div>
+  <div id="petlisti">
+    <select id="petlist">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="parrot">Parrot</option>
+      <option value="hamster">Hamster</option>
+      <option value="mouse">Mouse</option>
+    </select>
+    <button onclick="buypet()">Buy</button>
+  </div>
 </body>
 <script>
+  document.getElementById("petlisti").style.display="none";
+  document.getElementById("m").style.display=null;
   var wallet = "0";
   var user = "";
   var job = "none";
   var random = ['doctor','youtuber','scientist'];
   var randomjob = random[Math.floor(Math.random()*random.length)];
+  var pet = "none";
+  var petface = "";
   
   user = prompt("Please enter username");
+  if (user=="")  {
+    alert("You can't give an empty username")
+    user = prompt("Please enter username");
+    if (user=="")  {
+      alert("You cant give an empty username, else you will be given the username \"user\"")
+      user=prompt("Enter username")
+      if (user=="")  {
+        var user = "user";
+        alert("Your username is set as "+user)
+      }
+    }
+  }
   function d(e)  {
     var an = document.getElementById("os").value;
     if (an=="getj")  {
@@ -46,7 +73,38 @@
         alert("You don't have a job so you can't work.")
       }
     }
+    if (an=="buyp")  {
+      if (wallet<3500)  {
+        alert("Sorry ya can't buy a pet, you need 3,500coins to buy a pet")
+      }
+      if (wallet>3500)  {
+        document.getElementById("m").style.display="none";
+        document.getElementById("petlisti").style.display=null;
+      }
+    }
   }
+  function buypet()  {
+    var pet = document.getElementById("petlist").value;
+    if (pet=="dog")  {
+              petface = "🐶";
+            }
+            if (pet=="cat")  {
+              petface = "🐱";
+            }
+            if (pet=="parrot")  {
+              petface = "🦜";
+            }
+            if (pet=="hamster")  {
+              petface = "🐹";
+            }
+            if (pet=="mouse")  {
+              petface = "🐭";
+            }
+          alert("Congratulations @"+user+"!You bought a pet "+pet+petface)
+          wallet = parseInt(wallet-3500)
+    document.getElementById("petlisti").style.display="none";
+    document.getElementById("m").style.display=null;
+    }
 </script>
 <style>
   #h  {
