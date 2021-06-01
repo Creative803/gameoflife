@@ -108,23 +108,23 @@
   function buypet()  {
     var pet = document.getElementById("petlist").value;
     if (pet=="dog")  {
-              petface = "🐶";
-            }
-            if (pet=="cat")  {
-              petface = "🐱";
-            }
-            if (pet=="parrot")  {
-              petface = "🦜";
-            }
-            if (pet=="hamster")  {
-              petface = "🐹";
-            }
-            if (pet=="mouse")  {
-              petface = "🐭";
-            }
-          alert("Congratulations @"+user+" ! You bought a pet "+pet+petface)
-          wallet = parseInt(wallet-3500);
-          net = parseInt(wallet)+parseInt(bank);
+      petface = "🐶";
+    }
+    else if (pet=="cat")  {
+      petface = "🐱";
+    }
+    else if (pet=="parrot")  {
+      petface = "🦜";
+    }
+    else if (pet=="hamster")  {
+      petface = "🐹";
+    }
+    else if (pet=="mouse")  {
+      petface = "🐭";
+    }
+    alert("Congratulations @"+user+" ! You bought a pet "+pet+petface)
+    wallet = parseInt(wallet-3500);
+    net = parseInt(wallet)+parseInt(bank);
     document.getElementById("petlisti").style.display="none";
     document.getElementById("m").style.display=null;
     }
