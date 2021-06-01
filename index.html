@@ -28,6 +28,7 @@
 <script>
   document.getElementById("petlisti").style.display="none";
   document.getElementById("m").style.display=null;
+  var fovr = "f";
   var wallet = "0";
   var bank = "0";
   var net = "0";
@@ -71,6 +72,7 @@
       randomval = Math.floor(Math.random()*1500)
       if (job!="none")  {
         wallet = parseInt(wallet)+parseInt(randomval);
+        net = parseInt(wallet)+parseInt(bank);
         alert("You earned "+randomval+"coins, current wallet value="+wallet)
       }
       else  {
@@ -85,10 +87,14 @@
       if (wallet>3500)  {
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
+        net = parseInt(wallet)+parseInt(bank);
       }
     }
     if (an=="money")  {
       alert(my)
+    }
+    if (fovr=="f")  {
+      net = parseInt(wallet)+parseInt(bank);
     }
   }
   function buypet()  {
