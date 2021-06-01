@@ -39,6 +39,7 @@
   var randomjob = random[Math.floor(Math.random()*random.length)];
   var pet = "none";
   var petface = "";
+  var pcos = 3500;
   var my = "YOUR BALANCE  \nWallet: "+wallet+"\n Bank: "+bank+"\nNet: "+net;
   
   user = prompt("Please enter username");
@@ -86,7 +87,7 @@
         alert("Sorry ya can't buy a pet, you need 3,500coins to buy a pet")
       }
       if (wallet>3500 && pet=="none")  {
-        wallet = parseInt(wallet)-parseInt(3500);
+        wallet = parseInt(wallet)-parseInt(pcos);
         net = parseInt(wallet)+parseInt(bank);
         document.getElementById("m").style.display="none";
         document.getElementById("petlisti").style.display=null;
