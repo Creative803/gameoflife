@@ -12,6 +12,7 @@
       <option value="buyp">Buy pet</option>
       <option value="money">My money</option>
       <option value="myp">My pet</option>
+      <option value="withdraw">Withdraw</option>
     </select>
     <button onclick="d()">GO!</button>
   </div>
@@ -110,6 +111,14 @@
     }
     if (an=="myp")  {
       alert("You have a pet "+pet+petface)
+    }
+    if (an=="withdraw")  {
+      if (bank==0)  {
+        alert("@"+user+", you have no money in the bank to withdraw .")
+      }
+      else  {
+        document.getElementById("dewi").style.display=null;
+      }
     }
   }
   function buypet()  {
