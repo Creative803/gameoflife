@@ -27,7 +27,7 @@
     <button onclick="buypet()">Buy</button>
   </div>
   <div id="dewi">
-    <input placeholder="Enter digits">
+    <input id="digi" placeholder="Enter digits">
     <button onclick="dewicl()">GO!</button>
   </div>
 </body>
@@ -145,6 +145,11 @@
     document.getElementById("petlisti").style.display="none";
     document.getElementById("m").style.display=null;
     my = "YOUR BALANCE  \nWallet: "+wallet+"\n Bank: "+bank+"\nNet: "+net;
+  }
+  function dewicl()  {
+    if (dewi=="with")  {
+      var digival = document.getElementById("digi").value;
+    }
   }
 </script>
 <style>
